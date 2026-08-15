@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MK-PIERCING – Matthias Kiesler, Piercer aus Leidenschaft bei Black Danube Ink in Tulln an der Donau.">
+  <title>MK-PIERCING | Matthias Kiesler | Tulln</title>
+  <style>
+    :root{
+      --bg:#080808; --panel:#0e0e0e; --text:#f4f1eb; --muted:#c8c2b8;
+      --gold:#c58d4e; --line:#2a2927; --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+    nav{min-height:82px;display:flex;align-items:center;gap:28px}
+    .brand img{width:92px;height:72px;object-fit:contain}
+    .navlinks{margin-left:auto;display:flex;gap:24px;align-items:center;font-size:.88rem;text-transform:uppercase;letter-spacing:.08em}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--gold);padding:13px 18px;text-transform:uppercase;font-weight:700;letter-spacing:.04em}
+    .btn.primary{background:var(--gold);color:#0b0b0b}
+    .hero{border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.15fr;min-height:590px}
+    .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:64px 48px 64px 0}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-size:1.05rem}
+    h1,h2,h3{margin:0;text-transform:uppercase;letter-spacing:.04em}
+    h1{font-size:clamp(3rem,7vw,6.2rem);line-height:.95;margin-bottom:16px}
+    h2{font-size:2rem;margin-bottom:26px}
+    h2:after{content:"";display:block;width:42px;border-bottom:2px solid var(--gold);padding-top:9px}
+    .hero-copy p{font-size:1.1rem;color:var(--muted)}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+    .hero-photo{min-height:590px;background:url("assets/matthias-bei-der-arbeit.jpg") center/cover no-repeat;position:relative}
+    .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,transparent 28%)}
+    section{padding:58px 0;border-bottom:1px solid var(--line)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .gallery-grid img{width:100%;aspect-ratio:1/1.12;object-fit:cover;object-position:left center;border:1px solid #222}
+    .prices{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:start}
+    .price-list{border-top:1px solid var(--line)}
+    .price-row{display:grid;grid-template-columns:1fr auto;gap:20px;padding:10px 0;border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.06em}
+    .price-row .amount{color:var(--gold);font-weight:700;font-size:1.1rem}
+    .subprice{display:flex;justify-content:flex-end;gap:18px;text-transform:none;letter-spacing:0;color:var(--muted);font-size:.94rem}
+    .info-box{border:1px solid var(--gold);padding:26px}
+    .info-item{display:grid;grid-template-columns:42px 1fr;gap:16px;margin:0 0 24px}
+    .info-item:last-child{margin-bottom:0}
+    .icon{color:var(--gold);font-size:1.5rem}
+    .about{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:center}
+    .about img{width:100%;max-height:460px;object-fit:cover}
+    .about p{color:var(--muted)}
+    .about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;margin-top:25px;color:#eee}
+    .about-points span:before{content:"◆";color:var(--gold);margin-right:10px}
+    .bottom-grid{display:grid;grid-template-columns:.82fr 1.35fr .95fr;gap:0;border:1px solid var(--line)}
+    .bottom-col{padding:30px}
+    .studio-img{height:100%;min-height:430px;object-fit:cover;width:100%}
+    .contact-link{display:block;padding:7px 0;color:var(--muted)}
+    .contact-link strong{color:var(--text)}
+    .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+    .mapbox{margin-top:20px;padding:20px;background:#111;border:1px solid #292929;color:var(--muted)}
+    footer{padding:28px 0;color:#8f8a82;font-size:.85rem}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .legal-note{margin-top:16px;font-size:.78rem;color:#777}
+    @media(max-width:850px){
+      .navlinks a:not(.nav-book){display:none}
+      .hero-grid,.prices,.about,.bottom-grid{grid-template-columns:1fr}
+      .hero-copy{padding:46px 0}
+      .hero-photo{min-height:440px;order:-1}
+      .hero-photo:after{background:linear-gradient(0deg,var(--bg) 0%,transparent 30%)}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .bottom-col{border-top:1px solid var(--line)}
+      .studio-img{min-height:340px}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(100% - 24px,var(--max))}
+      nav{min-height:68px}.brand img{width:68px;height:56px}
+      .nav-book{padding:10px 11px;font-size:.75rem}
+      h1{font-size:2.7rem}
+      section{padding:42px 0}
+      .gallery-grid{grid-template-columns:1fr 1fr}
+      .info-box{padding:20px}
+      .about-points{grid-template-columns:1fr}
+      .hero-actions .btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top" aria-label="MK-PIERCING Startseite"><img src="assets/logo.jpg" alt="MK-PIERCING Logo"></a>
+    <div class="navlinks">
+      <a href="#piercings">Piercings</a><a href="#preise">Preise</a><a href="#ueber-mich">Über mich</a><a href="#studio">Studio</a>
+      <a class="btn nav-book" href="https://wa.me/436605355591" target="_blank" rel="noopener">Termin anfragen</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Matthias Kiesler</h1>
+        <div class="eyebrow">Piercer aus Leidenschaft</div>
+        <p>Bei <strong>Black Danube Ink</strong><br>Tattoo &amp; Piercing Studio · Tulln</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://wa.me/436605355591" target="_blank" rel="noopener">Termin über WhatsApp</a>
+          <a class="btn" href="https://www.instagram.com/mk.piercing/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Matthias Kiesler bei der Arbeit"></div>
+    </div>
+  </div>
+
+  <section id="piercings">
+    <div class="wrap">
+      <h2>Piercings</h2>
+      <div class="gallery-grid">
+        <img src="assets/piercing-nase-blau.jpg" alt="Nasenpiercing von MK-PIERCING">
+        <img src="assets/piercing-ohr-helix.jpg" alt="Ohrpiercing von MK-PIERCING">
+        <img src="assets/piercing-nase.jpg" alt="Nasenpiercing von MK-PIERCING">
+        <img src="assets/piercing-nabel.jpg" alt="Nabelpiercing von MK-PIERCING">
+      </div>
+    </div>
+  </section>
+
+  <section id="preise">
+    <div class="wrap prices">
+      <div>
+        <h2>Preise</h2>
+        <div class="price-list">
+          <div class="price-row"><span>Nase</span><span class="amount">€ 65,-</span></div>
+          <div class="price-row"><span>Nabel</span><span class="amount">€ 65,-</span></div>
+          <div class="price-row"><span>Ohrknorpelpiercing</span><span class="amount">€ 65,-</span></div>
+          <div class="price-row"><span>Eine Brust</span><span class="amount">€ 65,-</span></div>
+          <div class="price-row">
+            <span>Ohrloch</span>
+            <span>
+              <span class="subprice"><span>Stück</span><span class="amount">€ 40,-</span></span>
+              <span class="subprice"><span>Paar</span><span class="amount">€ 70,-</span></span>
+            </span>
+          </div>
+          <div class="price-row"><span>Industrial</span><span class="amount">€ 75,-</span></div>
+          <div class="price-row"><span>Surface</span><span class="amount">€ 90,-</span></div>
+          <div class="price-row"><span>Dermalanchor</span><span class="amount">€ 90,-</span></div>
+        </div>
+      </div>
+      <aside class="info-box">
+        <div class="info-item"><div class="icon">Ti</div><div>Ausschließlich <strong>Titan- und PTFE-Schmuck</strong> bei Ersteinsatz.</div></div>
+        <div class="info-item"><div class="icon">✦</div><div>Erstschmuck und Werkzeuge werden von mir sterilisiert.</div></div>
+        <div class="info-item"><div class="icon">ID</div><div>Unter 18 Jahren ist die Anwesenheit eines Erziehungsberechtigten sowie die Vorlage eines gültigen Ausweises beider erforderlich.</div></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="ueber-mich">
+    <div class="wrap about">
+      <img src="assets/matthias-bei-der-arbeit.jpg" alt="Matthias Kiesler, Piercer">
+      <div>
+        <h2>Über mich</h2>
+        <p>Hi, ich bin Matthias. Piercen ist für mich mehr als nur ein Job – es ist Leidenschaft, Vertrauen und Handwerk. Ich nehme mir Zeit für Beratung, Hygiene und ein sicheres Gefühl. Egal ob dein erstes Piercing oder ein neues Highlight – bei mir bist du in guten Händen.</p>
+        <div class="about-points">
+          <span>Piercer aus Leidenschaft</span>
+          <span>Hohe Hygienestandards</span>
+          <span>Individuelle Beratung</span>
+          <span>Hochwertiger Erstschmuck</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio">
+    <div class="wrap">
+      <div class="bottom-grid">
+        <div class="bottom-col">
+          <h2>Terminvereinbarung</h2>
+          <a class="contact-link" href="https://wa.me/436605355591" target="_blank" rel="noopener"><strong>WhatsApp</strong><br>0660 5355591</a>
+          <div class="socials">
+            <a class="btn" href="https://www.instagram.com/mk.piercing/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" href="https://www.tiktok.com/@mk.piercing71" target="_blank" rel="noopener">TikTok</a>
+          </div>
+          <h3 style="margin-top:34px">Folge mir auf Instagram</h3>
+          <p style="color:var(--muted)">@mk.piercing</p>
+        </div>
+        <img class="studio-img" src="assets/studio.jpg" alt="Piercingbereich von MK-PIERCING bei Black Danube Ink">
+        <div class="bottom-col">
+          <h2>Hier findest du mich</h2>
+          <p><strong>Black Danube Ink</strong><br>Langenlebarnerstraße 53/G2<br>3430 Tulln an der Donau</p>
+          <a class="btn primary" href="https://www.google.com/maps/search/?api=1&query=Langenlebarnerstra%C3%9Fe+53%2FG2%2C+3430+Tulln+an+der+Donau" target="_blank" rel="noopener">Route planen</a>
+          <div class="mapbox">Der Button „Route planen“ öffnet den Standort direkt in Google Maps.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© MK-PIERCING · Matthias Kiesler</span>
+    <span>Impressum · Datenschutz</span>
+  </div>
+  <div class="wrap legal-note">Vor der Veröffentlichung bitte Impressum und Datenschutzerklärung mit den vollständigen gesetzlichen Unternehmensangaben ergänzen.</div>
+</footer>
+</body>
+</html>
