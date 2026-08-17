@@ -105,6 +105,77 @@
     background-position:center top;
   }
 }
+    .piercing-gallery{
+  position:relative;
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  background:#050505;
+  border:1px solid var(--line);
+}
+
+.piercing-gallery #gallery-main{
+  width:100%;
+  height:600px;
+  object-fit:contain;
+  display:block;
+}
+
+.gallery-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  width:52px;
+  height:52px;
+  border:1px solid var(--gold);
+  background:rgba(0,0,0,.72);
+  color:var(--gold);
+  font-size:30px;
+  cursor:pointer;
+}
+
+.gallery-prev{left:14px;}
+.gallery-next{right:14px;}
+
+.gallery-thumbs{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.gallery-thumbs img{
+  width:82px;
+  height:82px;
+  object-fit:cover;
+  border:2px solid transparent;
+  cursor:pointer;
+  opacity:.75;
+}
+
+.gallery-thumbs img:hover{
+  opacity:1;
+  border-color:var(--gold);
+}
+
+@media (max-width:700px){
+  .piercing-gallery #gallery-main{
+    height:420px;
+  }
+
+  .gallery-arrow{
+    width:44px;
+    height:44px;
+    font-size:25px;
+  }
+
+  .gallery-thumbs img{
+    width:64px;
+    height:64px;
+  }
+}
   </style>
 </head>
 <body>
@@ -137,12 +208,27 @@
   <section id="piercings">
     <div class="wrap">
       <h2>Piercings</h2>
-      <div class="gallery-grid">
-        <img src="assets/piercing-nase-blau.jpg" alt="Nasenpiercing von MK-PIERCING">
-        <img src="assets/piercing-ohr-helix.jpg" alt="Ohrpiercing von MK-PIERCING">
-        <img src="assets/piercing-nase.jpg" alt="Nasenpiercing von MK-PIERCING">
-        <img src="assets/piercing-nabel.jpg" alt="Nabelpiercing von MK-PIERCING">
-      </div>
+      <div class="piercing-gallery">
+  <button class="gallery-arrow gallery-prev" type="button" aria-label="Vorheriges Bild">&#10094;</button>
+
+  <img id="gallery-main"
+       src="assets/piercing-nase-blau.jpg"
+       alt="Piercing von MK-PIERCING">
+
+  <button class="gallery-arrow gallery-next" type="button" aria-label="Nächstes Bild">&#10095;</button>
+</div>
+
+<div class="gallery-thumbs">
+  <img src="assets/piercing-nase-blau.jpg" alt="" onclick="showGalleryImage(0)">
+  <img src="assets/piercing-ohr-helix.jpg" alt="" onclick="showGalleryImage(1)">
+  <img src="assets/piercing-nase.jpg" alt="" onclick="showGalleryImage(2)">
+  <img src="assets/piercing-nabel.jpg" alt="" onclick="showGalleryImage(3)">
+</div>
+        
+        
+        
+        
+
     </div>
   </section>
 
