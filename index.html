@@ -323,5 +323,29 @@
     </details>
   </div>
 </footer>
+  <script>
+  const galleryImages = [
+    "assets/piercing-nase-blau.jpg",
+    "assets/piercing-ohr-helix.jpg",
+    "assets/piercing-nase.jpg",
+    "assets/piercing-nabel.jpg"
+  ];
+
+  let currentGalleryImage = 0;
+
+  function showGalleryImage(index) {
+    currentGalleryImage = index;
+    document.getElementById("gallery-main").src =
+      galleryImages[currentGalleryImage];
+  }
+
+  function changeGalleryImage(direction) {
+    currentGalleryImage =
+      (currentGalleryImage + direction + galleryImages.length) %
+      galleryImages.length;
+
+    showGalleryImage(currentGalleryImage);
+  }
+  </script>
 </body>
 </html>
