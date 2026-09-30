@@ -398,11 +398,6 @@
   button.addEventListener('click', function(e) {
     e.preventDefault();
     history.replaceState(null, '', window.location.pathname);
-    document.getElementById('preise').style.display = 'none';
-    document.getElementById('grosse-galerie').style.display = 'none';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
-  </script>
-</body>
-</html>
