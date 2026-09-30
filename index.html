@@ -82,7 +82,7 @@
     footer{padding:28px 0;color:#8f8a82;font-size:.85rem}
     footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .legal-note{margin-top:16px;font-size:.78rem;color:#777}
-    #grosse-galerie, #preise {display:none;}
+    #grosse-galerie:not(:target), #preise:not(:target) {display:none;}
     @media(max-width:850px){
       .navlinks a:not(.nav-book){display:none}
       .hero-grid,.prices,.about,.bottom-grid{grid-template-columns:1fr}
