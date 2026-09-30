@@ -265,6 +265,8 @@
 </video>      
     </div>
   </div>
+<a href="#" class="close-section">× SCHLIESSEN</a>
+
 </section>
   <section id="preise">
     <div class="wrap prices">
@@ -292,6 +294,7 @@
         <div class="info-item"><div class="icon">✦</div><div>Erstschmuck und Werkzeuge werden von mir sterilisiert.</div></div>
         <div class="info-item"><div class="icon">ID</div><div>Unter 18 Jahren ist die Anwesenheit eines Erziehungsberechtigten sowie die Vorlage eines gültigen Ausweises beider erforderlich.</div></div>
       </aside>
+      <a href="#" class="close-section">× SCHLIESSEN</a>
     </div>
   </section>
 
@@ -391,6 +394,15 @@
 
     showGalleryImage(currentGalleryImage);
   }
+    document.querySelectorAll('.close-section').forEach(button => {
+  button.addEventListener('click', function(e) {
+    e.preventDefault();
+    history.replaceState(null, '', window.location.pathname);
+    document.getElementById('preise').style.display = 'none';
+    document.getElementById('grosse-galerie').style.display = 'none';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
   </script>
 </body>
 </html>
